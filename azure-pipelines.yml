@@ -19,7 +19,4 @@ steps:
 - task: PowerShell@2
   inputs:
     targetType: 'inline'
-    script: |
-      # Write your PowerShell commands here.
-      
-      Write-Host "Hello World"
+    script: 'New-AzVM -ResourceGroupName "Zengweiwei" -Name "raepoc1" -Location "East Asia" -VirtualNetworkName "testvnet2" -SubnetName "raepoc"'
