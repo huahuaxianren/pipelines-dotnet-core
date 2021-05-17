@@ -16,7 +16,11 @@ steps:
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: 'dotnet build $(buildConfiguration)'
 
-- task: PowerShell@2
+- task: AzurePowerShell@5
   inputs:
-    targetType: 'inline'
-    script: 'New-AzVM -ResourceGroupName "Zengweiwei" -Name "raepoc1" -Location "East Asia" -VirtualNetworkName "testvnet2" -SubnetName "raepoc"'
+    azureSubscription: 'C&AI (7d5b3896-0b6b-4ace-962f-0e73ffd1c3b8)'
+    ScriptType: 'InlineScript'
+    Inline: |
+      New-AzVm -ResourceGroupName "zengweiwei" -Name "raepoc1" -Location "East Asia" `
+          -VirtualNetworkName "testvnet2" `
+          -SubnetName "raepoc"
