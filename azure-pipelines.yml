@@ -15,9 +15,10 @@ variables:
 steps:
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: 'dotnet build $(buildConfiguration)'
+
 - task: AzureCLI@2
   inputs:
     azureSubscription: 'C&AI (7d5b3896-0b6b-4ace-962f-0e73ffd1c3b8)'
-    scriptType: 'ps'
+    scriptType: 'pscore'
     scriptLocation: 'inlineScript'
     inlineScript: 'write-host "Hello world!"'
