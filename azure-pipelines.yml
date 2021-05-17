@@ -21,4 +21,4 @@ steps:
     azureSubscription: 'C&AI (7d5b3896-0b6b-4ace-962f-0e73ffd1c3b8)'
     scriptType: 'pscore'
     scriptLocation: 'inlineScript'
-    inlineScript: 'az vm create --resource-group Zengweiwei --location eastasia --nics raepoc --name raepoc1 --image win2016datacenter --admin-username rae --admin-password 1qaz!QAZ2wsx'
+    inlineScript: 'Remove-AzVM -ResourceGroupName "Zengweiwei" -Name "raepoc1"'
