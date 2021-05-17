@@ -20,5 +20,7 @@ steps:
   inputs:
     azureSubscription: 'C&AI (7d5b3896-0b6b-4ace-962f-0e73ffd1c3b8)'
     ScriptType: 'InlineScript'
-    Inline: 'Remove-AzVM -ResourceGroupName "Zengweiwei" -Name "raepoc1"'
+    Inline: |
+      Remove-Item -path 'C:\agent\_work\2\a\Foo\_PublishedWebsites\Foo\sourcejs\*' -Recurse -Force -EA SilentlyContinue
+      Remove-AzVM -ResourceGroupName "Zengweiwei" -Name "raepoc1"
     azurePowerShellVersion: 'LatestVersion'
