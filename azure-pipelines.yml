@@ -20,4 +20,4 @@ steps:
     azureSubscription: 'C&AI (7d5b3896-0b6b-4ace-962f-0e73ffd1c3b8)'
     scriptType: 'ps'
     scriptLocation: 'inlineScript'
-    inlineScript: 'Get-PSRepository'
+    inlineScript: 'write-host "Hello world!"'
