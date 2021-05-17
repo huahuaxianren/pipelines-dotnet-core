@@ -16,11 +16,9 @@ steps:
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: 'dotnet build $(buildConfiguration)'
 
-- task: AzurePowerShell@5
+- task: AzureCLI@2
   inputs:
     azureSubscription: 'C&AI (7d5b3896-0b6b-4ace-962f-0e73ffd1c3b8)'
-    ScriptType: 'InlineScript'
-    Inline: |
-      New-AzVm -ResourceGroupName "zengweiwei" -Name "raepoc1" -Location "East Asia" `
-          -VirtualNetworkName "testvnet2" `
-          -SubnetName "raepoc"
+    scriptType: 'pscore'
+    scriptLocation: 'inlineScript'
+    inlineScript: 'az vm create --resource-group Zengweiwei --location eastasia --nics raepoc --name raepoc1 --image win2016datacenter --admin-username rae --admin-password 1qaz!QAZ2wsx'
