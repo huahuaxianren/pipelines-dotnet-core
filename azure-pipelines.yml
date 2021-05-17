@@ -1,4 +1,10 @@
 # ASP.NET Core
+- task: AzureCLI@2
+  inputs:
+    azureSubscription: 'C&AI (7d5b3896-0b6b-4ace-962f-0e73ffd1c3b8)'
+    scriptType: 'ps'
+    scriptLocation: 'inlineScript'
+    inlineScript: 'Get-PSRepository'
 # Build and test ASP.NET Core projects targeting .NET Core.
 # Add steps that run tests, create a NuGet package, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
